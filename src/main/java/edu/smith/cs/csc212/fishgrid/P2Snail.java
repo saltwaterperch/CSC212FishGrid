@@ -10,7 +10,7 @@ import java.awt.geom.Rectangle2D;
  * A Snail moves left to right and bumps into things!
  * @author jfoley
  */
-public class Snail extends WorldObject {
+public class P2Snail extends WorldObject {
 	
 	/**
 	 * This is the color of the Snail's body.
@@ -37,7 +37,7 @@ public class Snail extends WorldObject {
 	 * Create a new Snail in a part of this world.
 	 * @param world - the world where the snail moves/lives.
 	 */
-	public Snail(World world) {
+	public P2Snail(World world) {
 		super(world);
 	}
 

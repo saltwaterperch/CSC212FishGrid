@@ -178,8 +178,8 @@ public class World {
 	 * Insert a new Snail at random into the world.
 	 * @return the snail!
 	 */
-	public Snail insertSnailRandomly() {
-		Snail snail = new Snail(this);
+	public P2Snail insertSnailRandomly() {
+		P2Snail snail = new P2Snail(this);
 		insertRandomly(snail);
 		return snail;
 	}
@@ -206,7 +206,7 @@ public class World {
 		for (WorldObject it : inSpot) {
 			// TODO(FishGrid): Don't let us move over rocks as a Fish.
 			// The other fish shouldn't step "on" the player, the player should step on the other fish.
-			if (it instanceof Snail) {
+			if (it instanceof P2Snail) {
 				// This if-statement doesn't let anyone step on the Snail.
 				// The Snail(s) are not gonna take it.
 				return false;

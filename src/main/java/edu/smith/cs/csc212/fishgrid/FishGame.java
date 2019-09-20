@@ -43,6 +43,12 @@ public class FishGame {
 	 */
 	int score;
 	
+	// number of rocks!
+	int stones;
+	
+	// our snail friend gary!
+	// P2Snail snail;
+	
 	/**
 	 * Create a FishGame of a particular size.
 	 * @param w how wide is the grid?
@@ -57,13 +63,14 @@ public class FishGame {
 		// Add a home!
 		home = world.insertFishHome();
 		
-		// TODO(lab) Generate some more rocks!
-		// TODO(lab) Make 5 into a constant, so it's easier to find & change.
-		for (int i=0; i<5; i++) {
+		
+		stones = 15;
+		for (int i=0; i< stones; i++) {
 			world.insertRockRandomly();
 		}
 		
-		// TODO(lab) Make the snail!
+		// snail = new P2Snail(world);
+		world.insertSnailRandomly();
 		
 		// Make the player out of the 0th fish color.
 		player = new Fish(0, world);

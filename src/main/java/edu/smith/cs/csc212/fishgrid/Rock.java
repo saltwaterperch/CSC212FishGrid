@@ -9,12 +9,17 @@ import java.awt.geom.RoundRectangle2D;
  * This is not <a href="https://en.wikipedia.org/wiki/Dwayne_Johnson">the Rock</a>, but a Rock.
  * @author jfoley
  */
+
+// extends worldobject is bascially copy and paste inheritance 
 public class Rock extends WorldObject {
 	/**
 	 * I took these colors from Wikipedia's Cool and Warm Gray sections.
 	 * https://en.wikipedia.org/wiki/Shades_of_gray#Cool_grays
 	 * https://en.wikipedia.org/wiki/Shades_of_gray#Warm_grays
 	 */
+	// storing each color as an int, from the index position
+	int color;
+	
 	private static Color[] ROCK_COLORS = new Color[] {
 			new Color(144,144,192),
 			new Color(145,163,176),
@@ -27,7 +32,12 @@ public class Rock extends WorldObject {
 			new Color(72,60,50)
 	};
 	
-	// TODO(lab): introduce a variable that is part of the class (one per Rock object) here that indexes the ROCK_COLORS array.
+	
+	
+	// method that puts our list of colors into variable color as an interger index position
+	public Color getColor() {
+		return ROCK_COLORS[this.color];
+	}
 	
 	/**
 	 * Construct a Rock in our world.
@@ -35,8 +45,9 @@ public class Rock extends WorldObject {
 	 */
 	public Rock(World world) {
 		super(world);
-		// TODO(lab): initialize your rock color index to a random number!
-		// Note that all WorldObjects have a ``rand`` available so you don't need to make one.
+		// pick a random number from the length of our list
+		// color is a variable that is part of the class, so we don't choose it when it's drawn
+		this.color = rand.nextInt(ROCK_COLORS.length);
 	}
 
 	/**
@@ -44,8 +55,8 @@ public class Rock extends WorldObject {
 	 */
 	@Override
 	public void draw(Graphics2D g) {
-		// TODO(lab): use the right color in here...
-		g.setColor(Color.gray);
+		// retrieve color from our method 
+		g.setColor(this.getColor());
 		RoundRectangle2D rock = new RoundRectangle2D.Double(-.5,-.5,1,1,0.3,0.3);
 		g.fill(rock);
 	}

@@ -19,11 +19,11 @@ public class Main extends GFX {
 	/**
 	 * Game size (visual). 
 	 */
-	public static int VISUAL_GRID_SIZE = 600;
+	public static int VISUAL_GRID_SIZE = 700;
 	/**
 	 * Game size (logical). 
 	 */
-	public static int LOGICAL_GRID_SIZE = 15;
+	public static int LOGICAL_GRID_SIZE = 10;
 	/**
 	 * The words appear in the top part of the screen.
 	 */

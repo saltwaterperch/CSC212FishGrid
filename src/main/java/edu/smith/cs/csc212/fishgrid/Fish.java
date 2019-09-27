@@ -18,28 +18,37 @@ public class Fish extends WorldObject {
 	static Color[] COLORS = {
 			Color.red,
 			Color.green,
+			Color.blue,
 			Color.yellow,
 			Color.cyan,
-			Color.orange,
-			Color.blue,
+			Color.gray,
+			Color.magenta,
 			Color.white,
-			Color.pink
-			// TODO: (FishGrid) Maybe make a special fish that is more points?
+			Color.pink,
+			// Orange is our special fish "goldy" worth 20 points
+			Color.orange
+			
 	};
 	/**
 	 * This is an index into the {@link #COLORS} array.
 	 */
-	int color;
+	int colorIndex;
 	/**
 	 * Whether or not this is the player;
 	 */
 	boolean player = false;
+	
+	boolean yellow = false;
 	
 	/**
 	 * Called only on the Fish that is the player!
 	 */
 	public void markAsPlayer() {
 		this.player = true;
+	}
+	// makeing a fish that is extra points
+	public void markAsYellow( ) {
+		this.yellow = true;
 	}
 
 
@@ -50,7 +59,7 @@ public class Fish extends WorldObject {
 	 */
 	public Fish(int color, World world) {
 		super(world);
-		this.color = color;
+		this.colorIndex = color;
 	}
 	
 	/**
@@ -58,7 +67,7 @@ public class Fish extends WorldObject {
 	 * @return the Color object from our array.
 	 */
 	public Color getColor() {
-		return COLORS[this.color];
+		return COLORS[this.colorIndex];
 	}
 	
 	/**
@@ -68,7 +77,8 @@ public class Fish extends WorldObject {
 	
 	/**
 	 * Go ahead and ignore this method if you're not into graphics.
-	 * We use "dt" as a trick to make the fish change directions every second or so; this makes them feel a little more alive.
+	 * We use "dt" as a trick to make the fish change directions every second or so;
+	 * this makes them feel a little more alive.
 	 */
 	@Override
 	public void draw(Graphics2D g) {

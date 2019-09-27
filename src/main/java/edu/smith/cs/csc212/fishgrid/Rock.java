@@ -34,7 +34,8 @@ public class Rock extends WorldObject {
 	
 	
 	
-	// method that puts our list of colors into variable color as an interger index position
+	// method that puts our list of colors into 
+	// variable color as an integer index position
 	public Color getColor() {
 		return ROCK_COLORS[this.color];
 	}
@@ -46,7 +47,8 @@ public class Rock extends WorldObject {
 	public Rock(World world) {
 		super(world);
 		// pick a random number from the length of our list
-		// color is a variable that is part of the class, so we don't choose it when it's drawn
+		// color is a variable that is part of the class,
+		//so we don't choose it when it's drawn
 		this.color = rand.nextInt(ROCK_COLORS.length);
 	}
 
